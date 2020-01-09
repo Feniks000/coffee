@@ -4,6 +4,122 @@ from PyQt5 import uic
 import sqlite3
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'main.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class UiMain(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1300, 720)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setGeometry(QtCore.QRect(10, 10, 1281, 671))
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1300, 26))
+        self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
+        self.menu_2 = QtWidgets.QMenu(self.menubar)
+        self.menu_2.setObjectName("menu_2")
+        MainWindow.setMenuBar(self.menubar)
+        self.action = QtWidgets.QAction(MainWindow)
+        self.action.setObjectName("action")
+        self.action_2 = QtWidgets.QAction(MainWindow)
+        self.action_2.setObjectName("action_2")
+        self.action_3 = QtWidgets.QAction(MainWindow)
+        self.action_3.setObjectName("action_3")
+        self.menu.addAction(self.action)
+        self.menu.addAction(self.action_2)
+        self.menu_2.addAction(self.action_3)
+        self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.menu.setTitle(_translate("MainWindow", "просмотреть данных о кофе"))
+        self.menu_2.setTitle(_translate("MainWindow", "редактировать данные о кофе"))
+        self.action.setText(_translate("MainWindow", "Открыть"))
+        self.action_2.setText(_translate("MainWindow", "Закрыть"))
+        self.action_3.setText(_translate("MainWindow", "открыть редактор"))
+
+
+class UiRedactor(object):
+    def setupUi2(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1300, 720)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setGeometry(QtCore.QRect(10, 10, 1281, 671))
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1300, 26))
+        self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
+        self.menu_2 = QtWidgets.QMenu(self.menubar)
+        self.menu_2.setObjectName("menu_2")
+        self.menu_3 = QtWidgets.QMenu(self.menu_2)
+        self.menu_3.setObjectName("menu_3")
+        MainWindow.setMenuBar(self.menubar)
+        self.action = QtWidgets.QAction(MainWindow)
+        self.action.setObjectName("action")
+        self.action_2 = QtWidgets.QAction(MainWindow)
+        self.action_2.setObjectName("action_2")
+        self.action_id = QtWidgets.QAction(MainWindow)
+        self.action_id.setObjectName("action_id")
+        self.action_4 = QtWidgets.QAction(MainWindow)
+        self.action_4.setObjectName("action_4")
+        self.action_5 = QtWidgets.QAction(MainWindow)
+        self.action_5.setObjectName("action_5")
+        self.action_6 = QtWidgets.QAction(MainWindow)
+        self.action_6.setObjectName("action_6")
+        self.menu.addAction(self.action)
+        self.menu.addAction(self.action_2)
+        self.menu.addAction(self.action_6)
+        self.menu_3.addAction(self.action_id)
+        self.menu_3.addAction(self.action_4)
+        self.menu_2.addAction(self.action_5)
+        self.menu_2.addAction(self.menu_3.menuAction())
+        self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
+
+        self.retranslateUi2(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi2(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.menu.setTitle(_translate("MainWindow", "изменить данные о кофе"))
+        self.menu_2.setTitle(_translate("MainWindow", "редактировать данные о кофе"))
+        self.menu_3.setTitle(_translate("MainWindow", "удалить кофе"))
+        self.action.setText(_translate("MainWindow", "Открыть базу"))
+        self.action_2.setText(_translate("MainWindow", "Закрыть базу"))
+        self.action_id.setText(_translate("MainWindow", "используя id"))
+        self.action_4.setText(_translate("MainWindow", "групповое удаление по параметрам"))
+        self.action_5.setText(_translate("MainWindow", "добавить кофе"))
+        self.action_6.setText(_translate("MainWindow", "Закрыть редактор"))
 
 
 def replace(elem: iter, index: int, table: dict) -> tuple:
@@ -57,7 +173,7 @@ def ask(path, sql_statement: str):
 #             QtCore.QThread.msleep(1000)
 
 
-class Main(QMainWindow):
+class Main(QMainWindow, UiMain, UiRedactor):
     def __init__(self, state: int) -> None:
         if state == 0:
             super(Main, self).__init__()
@@ -66,7 +182,8 @@ class Main(QMainWindow):
             # self.time_to_update.moveToThread(self.thread)
             # self.time_to_update.update_table.connect(self.update_table)
             # self.thread.started.connect(self.time_to_update.run)
-        uic.loadUi('main.ui', self)
+        # uic.loadUi('main.ui', self)
+        self.setupUi(self)
         self.action.triggered.connect(self.loader)
         self.action_2.triggered.connect(self.closer)
         self.action_3.triggered.connect(self.open_redactor)
@@ -140,7 +257,7 @@ class Main(QMainWindow):
             self.table_changed = False
 
     def open_redactor(self) -> None:
-        uic.loadUi('addEditCoffeeForm.ui', self)
+        self.setupUi2(self)
         self.action_6.triggered.connect(self.close_redactor)
         self.action.triggered.connect(self.loader)
         self.action_2.triggered.connect(self.closer)
